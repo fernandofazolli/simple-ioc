@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="lower" class="br.com.fazolli.dojo.ioc.LowerTextProcessor" />
+    <bean id="upper" class="br.com.fazolli.dojo.ioc.UpperTextProcessor" />
+    <bean id="reverse" class="br.com.fazolli.dojo.ioc.ReverseTextProcessor" />
+
+    <bean id="springTextExecutor" class="br.com.fazolli.dojo.ioc.spring.injection.SpringTextExecutor">
+        <constructor-arg index="0" ref="upper"/>
+        <constructor-arg index="1" ref="reverse"/>
+    </bean>
+
+</beans>
